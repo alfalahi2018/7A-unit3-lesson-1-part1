@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unit 3 · Lesson 1 · Holiday Equipment</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2A43;--cream:#FFF8EC;--coral:#E8553D;--teal:#12A594;--sun:#F5B700;--sky:#9FD8FF}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--cream);font-family:'Fredoka',system-ui,sans-serif;padding:16px}
+.wrap{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+button{font-family:inherit;cursor:pointer}button:focus-visible{outline:4px solid var(--sun);outline-offset:2px}
+.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top small{color:var(--sky);letter-spacing:2px}.top h1{margin:0;font-size:clamp(24px,4vw,34px)}
+.nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.nav span{color:var(--sky)}
+.nav button{border:3px solid var(--sky);background:transparent;color:var(--cream);border-radius:999px;padding:6px 16px;font-size:17px;font-weight:600}
+.nav button.on{background:var(--sun);border-color:var(--sun);color:var(--navy)}
+.card{background:var(--cream);color:var(--navy);border-radius:26px;padding:clamp(16px,3vw,32px);display:flex;flex-direction:column;gap:14px;animation:pop .4s}
+.card h2{margin:0;font-size:clamp(20px,3vw,28px)}.meta{display:flex;justify-content:space-between;font-weight:600;font-size:18px;flex-wrap:wrap}
+.q{font-size:clamp(22px,3.4vw,32px);font-weight:700;line-height:1.35}.q b{color:var(--coral)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.o{display:flex;align-items:center;justify-content:center;gap:12px;border:3px solid var(--navy);background:#fff;color:var(--navy);border-radius:18px;padding:14px;font-size:clamp(18px,2.6vw,25px);font-weight:600}
+.o.ok{background:#8FE3CF;animation:pop .4s}.o.bad{background:#FFB4A2;animation:shake .4s}.o:disabled{cursor:default}
+.ic{background:#fff;border-radius:12px;flex:none}.fb{font-size:22px;font-weight:600;min-height:30px}
+.go{align-self:flex-end;background:var(--navy);color:var(--cream);border:0;border-radius:999px;padding:12px 32px;font-size:21px;font-weight:700}
+.go.alt{background:var(--coral);color:var(--navy)}.go[disabled]{opacity:.35}
+.row{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.big{display:flex;justify-content:center}
+.box{background:#fff;border:2px solid var(--navy);border-radius:12px;padding:12px 20px;font-size:clamp(18px,2.4vw,22px);line-height:1.8}.box b{color:var(--coral)}
+.learn{background:var(--sky);border-radius:16px;padding:10px 18px;font-size:19px}
+.mt{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}@media(max-width:700px){.mt{grid-template-columns:1fr}}
+.s{display:block;width:100%;text-align:left;border:3px solid var(--navy);background:#fff;color:var(--navy);border-radius:14px;padding:10px 14px;font-size:clamp(17px,2.2vw,21px);margin-bottom:8px}
+.s.sel{background:var(--sun)}.s.done{background:#8FE3CF}.s b{color:var(--coral)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.t{border:3px solid var(--navy);background:#fff;border-radius:16px;padding:8px;color:var(--navy);font-weight:700;font-size:20px}
+.t.done{opacity:.35}.t.shake{animation:shake .4s;background:#FFB4A2}
+.cz{display:grid;grid-template-columns:40px repeat(3,1fr);gap:8px;align-items:center}.cz .o{padding:6px 10px;justify-content:flex-start;border-color:transparent;font-size:clamp(17px,2.2vw,22px)}.cz .o.sel{border-color:var(--navy)}
+.dot{width:26px;height:16px;border:3px solid var(--navy);border-radius:50%;background:#fff;flex:none}.sel .dot{background:var(--navy)}
+.credit{text-align:right;font-size:15px}
+@keyframes pop{0%{transform:scale(.96);opacity:.4}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.tl{border:3px solid var(--navy);border-radius:18px;padding:10px 6px;color:var(--navy);font-size:22px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:6px}.tl.seen{background:var(--navy);color:var(--cream)}.say{background:var(--navy);color:var(--cream);border-radius:18px;padding:12px 20px;font-size:23px;min-height:30px}.pings{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.pg{border:0;border-radius:18px;padding:16px;font-size:22px;font-weight:700;color:var(--navy)}</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-suitcase" viewBox="0 0 64 64"><rect x="10" y="20" width="44" height="32" rx="5" fill="#E8553D"/><path d="M24 20v-6h16v6" fill="none" stroke="#0F2A43" stroke-width="3"/><rect x="18" y="20" width="4" height="32" fill="#B93A26"/><rect x="42" y="20" width="4" height="32" fill="#B93A26"/></symbol>
+<symbol id="i-passport" viewBox="0 0 64 64"><rect x="16" y="8" width="32" height="48" rx="4" fill="#12457A"/><circle cx="32" cy="27" r="9" fill="none" stroke="#F5B700" stroke-width="2.5"/><path d="M23 27h18M32 18v18" stroke="#F5B700" stroke-width="2"/><rect x="22" y="43" width="20" height="4" rx="2" fill="#F5B700"/></symbol>
+<symbol id="i-guidebook" viewBox="0 0 64 64"><rect x="12" y="10" width="40" height="44" rx="4" fill="#12A594"/><rect x="18" y="16" width="28" height="22" rx="2" fill="#FFF8EC"/><path d="M32 34c-6-7-6-12 0-12s6 5 0 12z" fill="#E8553D"/><rect x="18" y="43" width="22" height="3" fill="#FFF8EC"/></symbol>
+<symbol id="i-flip-flops" viewBox="0 0 64 64"><ellipse cx="22" cy="34" rx="9" ry="20" fill="#F5B700"/><ellipse cx="42" cy="34" rx="9" ry="20" fill="#F5B700"/><path d="M22 22v10M22 32l-6 6M22 32l6 6M42 22v10M42 32l-6 6M42 32l6 6" stroke="#E8553D" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-raincoat" viewBox="0 0 64 64"><path d="M20 14c4-6 20-6 24 0l10 12-6 4v24H16V30l-6-4z" fill="#F5B700"/><path d="M24 14c4 6 12 6 16 0" fill="none" stroke="#0F2A43" stroke-width="2.5"/><path d="M32 22v34" stroke="#0F2A43" stroke-width="2.5"/></symbol>
+<symbol id="i-toothbrush" viewBox="0 0 64 64"><path d="M10 52L38 28" stroke="#12A594" stroke-width="8" stroke-linecap="round"/><path d="M40 26l12-10" stroke="#9FD8FF" stroke-width="10" stroke-linecap="round"/><path d="M44 12l6 6M50 8l6 6" stroke="#E8553D" stroke-width="3" stroke-linecap="round"/></symbol>
+<symbol id="i-washbag" viewBox="0 0 64 64"><path d="M22 24c0-10 20-10 20 0" fill="none" stroke="#0F2A43" stroke-width="3"/><rect x="8" y="22" width="48" height="30" rx="12" fill="#9FD8FF" stroke="#0F2A43" stroke-width="2.5"/><path d="M14 32h36" stroke="#0F2A43" stroke-width="3" stroke-dasharray="4 3"/><rect x="28" y="28" width="8" height="8" rx="2" fill="#E8553D"/></symbol>
+<symbol id="i-charger" viewBox="0 0 64 64"><rect x="24" y="4" width="4" height="10" fill="#E8553D"/><rect x="36" y="4" width="4" height="10" fill="#E8553D"/><rect x="20" y="14" width="24" height="22" rx="5" fill="#0F2A43"/><path d="M32 36v10c0 8 12 6 12 14" stroke="#0F2A43" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-soap" viewBox="0 0 64 64"><rect x="8" y="28" width="38" height="24" rx="10" fill="#F5B700"/><circle cx="50" cy="18" r="6" fill="none" stroke="#12A594" stroke-width="2.5"/><circle cx="40" cy="12" r="4" fill="none" stroke="#12A594" stroke-width="2.5"/><circle cx="55" cy="34" r="3" fill="none" stroke="#12A594" stroke-width="2.5"/></symbol>
+<symbol id="i-pillow" viewBox="0 0 64 64"><path d="M10 18c14-6 30-6 44 0 4 14 4 14 0 28-14 6-30 6-44 0-4-14-4-14 0-28z" fill="#9FD8FF" stroke="#0F2A43" stroke-width="2.5"/><path d="M18 24l4 4M46 24l-4 4M18 42l4-4M46 42l-4-4" stroke="#0F2A43" stroke-width="2.5" stroke-linecap="round"/></symbol>
+<symbol id="i-umbrella" viewBox="0 0 64 64"><path d="M6 32C8 10 56 10 58 32c-5-5-9-5-13 0-4-5-9-5-13 0-4-5-9-5-13 0-4-5-9-5-13 0z" fill="#E8553D"/><path d="M32 30v20c0 6-8 6-8 1" stroke="#0F2A43" stroke-width="3.5" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-medicine" viewBox="0 0 64 64"><rect x="18" y="22" width="28" height="34" rx="6" fill="#12A594"/><rect x="22" y="12" width="20" height="10" rx="3" fill="#0F2A43"/><rect x="22" y="32" width="20" height="14" rx="2" fill="#FFF8EC"/><path d="M32 34v10M27 39h10" stroke="#E8553D" stroke-width="3"/></symbol>
+</defs></svg>
+<div class="wrap">
+<div class="top"><div><small>UNIT 3 · TRAVEL · LESSON 1</small><h1>Holiday Equipment</h1></div><div style="text-align:right"><b id="stars"></b><br><small style="letter-spacing:0">Lesson time: 25 minutes</small></div></div>
+<div class="nav" id="nav"></div>
+<div id="main"></div>
+</div>
+<script>
+const ic=(k,s=56)=>'<svg class="ic" width="'+s+'" height="'+s+'" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-'+k+'"/></svg>';
+const Wd=['suitcase','passport','guidebook','flip-flops','raincoat','toothbrush','washbag','charger','soap','pillow','umbrella','medicine'];
+const Q=[['You put your clothes in it.','suitcase',['passport','suitcase','pillow','soap']],['You show it at the airport.','passport',['passport','umbrella','washbag','charger']],['It has maps and tips about a city.','guidebook',['raincoat','guidebook','medicine','pillow']],['You wear them on sunny days.','flip-flops',['flip-flops','soap','suitcase','charger']],['You wear it when it rains.','raincoat',['passport','raincoat','toothbrush','pillow']],['You clean your teeth with it.','toothbrush',['toothbrush','umbrella','guidebook','soap']],['You sleep on it when you travel at night.','pillow',['charger','pillow','washbag','passport']],['Medicines go in your ______.','washbag',['suitcase','washbag','umbrella','guidebook']],['Check the date on your ______.','passport',['pillow','passport','soap','raincoat']],['Put your name and address on your ______.','suitcase',['suitcase','toothbrush','medicine','umbrella']],['Take a raincoat or an ______ for rainy days.','umbrella',['charger','umbrella','guidebook','pillow']],['Take a ______ for your phone or tablet.','charger',['flip-flops','charger','soap','passport']]];
+const C={t:'Sara is going on holiday. She puts her clothes in her {0} (1). She also takes her {1} (2) because she must show it at the airport. It is sunny at the beach, so she wears {2} (3). In her washbag she has a {3} (4) to clean her teeth. At night she takes a {4} (5) so she can sleep on the plane. She is very happy!',o:[['soap','umbrella','suitcase'],['passport','pillow','charger'],['raincoat','flip-flops','guidebook'],['guidebook','toothbrush','umbrella'],['washbag','passport','pillow']],a:[2,0,1,1,2]};
+const NAMES=['1 · Starting','2 · Words','3 · Practice','4 · Finish'],MIN=[3,6,13,3];
+let S={step:0,seen:{},msg:'Tap any picture card to hear the word.',qi:0,pk:null,sc:0,done:false,ans:{},chk:false};
+let ac;function tone(f,d,ty){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();f.forEach((hz,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type=ty||'sine';o.frequency.value=hz;const t=ac.currentTime+i*d;g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d)})}catch(e){}}
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.85;speechSynthesis.speak(u)}catch(e){}}
+function go(k){tone([523,659],.1);S.step=k;render()}
+function ping(w,f){tone(f,.12);say(w)}
+function tile(w){tone([660,880],.12);say(w);S.seen[w]=1;S.msg=w.toUpperCase()+' — now you say it! ('+Object.keys(S.seen).length+' / 12 words)';render()}
+function startQ(){S.qi=0;S.pk=null;S.sc=0;S.done=false;tone([392,523,659,784],.1);render()}
+function pick(i){if(S.pk!==null)return;const q=Q[S.qi],ok=q[2][i]===q[1];S.pk=i;if(ok){S.sc++;tone([523,659,784],.12,'triangle')}else tone([220,160],.2,'sawtooth');say(q[1]);render()}
+function nxt(){if(S.pk===null)return;if(S.qi+1===Q.length){S.done=true;tone([523,659,784,1047],.15,'triangle')}else{S.qi++;S.pk=null}render()}
+function cl(g,i){if(S.chk)return;S.ans[g]=i;tone([660],.08);render()}
+function chk(){if(Object.keys(S.ans).length<5){tone([220],.15,'square');return}S.chk=true;const n=C.a.filter((a,g)=>S.ans[g]===a).length;tone(n>=4?[523,659,784,1047]:[392,330,262],.14,'triangle');render()}
+function retryF(){S.ans={};S.chk=false;tone([440,523],.1);render()}
+function view(){
+ if(S.step===0){const P=[['Holidays','#E8553D',[523,659]],['Travel','#12A594',[440,554]],['Suitcase?','#F5B700',[392,523]],['Plane?','#9FD8FF',[587,740]]];
+  return '<div class="card"><h2>Starting the lesson · 3 min</h2><div class="q" style="font-size:clamp(19px,2.6vw,24px);font-weight:500">Think! What words do you know about <b>Holidays</b> and <b style="color:#12A594">Travel</b>? You have one minute. Say them to your partner!</div><div class="pings">'+P.map(p=>'<button class="pg" style="background:'+p[1]+'" onclick="ping(\''+p[0].replace('?','')+'\',['+p[2]+'])">'+p[0]+'</button>').join('')+'</div><div style="font-size:20px;line-height:1.6"><b>In this lesson I will:</b> learn 12 words for what to take on holiday · listen and say them · read Frank’s travel tips.</div><button class="go" onclick="go(1)">Start the lesson</button></div>'}
+ if(S.step===1){const c=['#9FD8FF','#F5B700','#FFB4A2','#8FE3CF'];
+  return '<div class="card"><h2>Presentation · 6 min — Click a word. Listen. Repeat!</h2><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">'+Wd.map((w,i)=>'<button class="tl'+(S.seen[w]?' seen':'')+'" style="'+(S.seen[w]?'':'background:'+c[i%4])+'" onclick="tile(\''+w+'\')">'+ic(w,56)+w+'</button>').join('')+'</div><div class="say">'+S.msg+'</div><button class="go alt" onclick="go(2)">Practice time →</button></div>'}
+ if(S.step===2){
+  if(S.done)return '<div class="card"><h2>Practice</h2><div class="q" style="text-align:center;font-size:56px;color:#E8553D">'+S.sc+' / '+Q.length+'</div><div class="fb" style="text-align:center">'+(S.sc>=10?'Fantastic! You are a travel expert!':S.sc>=7?'Well done! Review the words you missed.':'Good try! Review the words and play again.')+'</div><div class="row"><button class="go alt" onclick="startQ()">Play again</button><button class="go" onclick="go(3)">Finish task →</button></div></div>';
+  const q=Q[S.qi],lk=S.pk!==null,ok=lk&&q[2][S.pk]===q[1];
+  return '<div class="card"><div class="meta"><span>'+(S.qi<7?'Guess the word':'Frank’s travel tips: complete the sentence')+'</span><span>Question '+(S.qi+1)+' / '+Q.length+' · Stars: '+S.sc+'</span></div><div class="q">'+q[0].replace('______',lk?'<b>'+q[1]+'</b>':'______')+'</div><div class="grid">'+q[2].map((w,i)=>'<button class="o'+(lk&&w===q[1]?' ok':lk&&i===S.pk?' bad':'')+'" '+(lk?'disabled':'')+' onclick="pick('+i+')">'+ic(w,46)+'<span>'+w+'</span></button>').join('')+'</div><div class="fb">'+(lk?(ok?'Great job! ':'Not quite. ')+'The answer is: '+q[1]+'.':'Choose the correct answer.')+'</div><button class="go" onclick="nxt()" '+(lk?'':'disabled')+'>'+(S.qi+1===Q.length?'Finish':'Next →')+'</button></div>'}
+ const g=i=>'<b>'+(S.ans[i]===undefined?'______':C.o[i][S.ans[i]])+'</b>',n=C.a.filter((a,i)=>S.ans[i]===a).length;
+ return '<div class="card"><div class="meta"><span>Finishing the lesson · Grammar / Vocabulary</span><b>(5 marks)</b></div><div style="font-style:italic;font-size:18px">For each item, shade in the bubble next to the correct option.</div><div class="box">'+C.t.replace(/\{(\d)\}/g,(m,i)=>g(+i))+'</div>'+C.o.map((os,gi)=>'<div class="cz"><b>'+(gi+1)+')</b>'+os.map((w,i)=>{const sel=S.ans[gi]===i,cls=S.chk&&i===C.a[gi]?' ok':S.chk&&sel?' bad':'';return '<button class="o'+(sel?' sel':'')+cls+'" onclick="cl('+gi+','+i+')"><span class="dot"></span>'+w+'</button>'}).join('')+'</div>').join('')+'<div class="row"><b style="font-size:26px;color:#E8553D;margin-right:auto">'+(S.chk?'Score: '+n+' / 5':'')+'</b><span>'+(S.chk?(n===5?'Excellent!':'Review: '+C.a.map((x,i)=>S.ans[i]!==x?C.o[i][x]:null).filter(Boolean).join(', ')):'Answer all 5 items, then press Check.')+'</span><button class="go alt" onclick="chk()">Check</button><button class="go" onclick="retryF()">Try again</button></div><div class="credit">Created by T.Badria Alfalahi</div></div>'}
+function render(){document.getElementById('nav').innerHTML='<span>Start with any part:</span>'+NAMES.map((a,k)=>'<button class="'+(k===S.step?'on':'')+'" onclick="go('+k+')">'+a+'</button>').join('');document.getElementById('stars').textContent='Stars: '+S.sc;document.getElementById('main').innerHTML=view()}
+render();
+</script></body></html>
